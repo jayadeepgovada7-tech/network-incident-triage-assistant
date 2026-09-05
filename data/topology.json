@@ -1,0 +1,63 @@
+{
+  "sites": [
+    { "id": "DC-MUM", "name": "Mumbai DC", "type": "datacenter" },
+    { "id": "POP-DEL", "name": "Delhi POP", "type": "pop" },
+    { "id": "BRANCH-BLR", "name": "Bangalore branch", "type": "branch" }
+  ],
+  "links": [
+    {
+      "id": "L-PRIMARY-WAN",
+      "a": "CR-MUM-01",
+      "b": "PE-DEL-01",
+      "a_iface": "TenGig0/0/0",
+      "b_iface": "TenGig0/1/0",
+      "role": "primary",
+      "impact": "high"
+    },
+    {
+      "id": "L-BACKUP-WAN",
+      "a": "CR-MUM-02",
+      "b": "PE-DEL-01",
+      "a_iface": "TenGig0/0/0",
+      "b_iface": "TenGig0/1/1",
+      "role": "backup",
+      "impact": "high"
+    },
+    {
+      "id": "L-DEL-BLR",
+      "a": "PE-DEL-01",
+      "b": "CE-BLR-01",
+      "a_iface": "Gig0/0/2",
+      "b_iface": "Gig0/0/0",
+      "role": "primary",
+      "impact": "medium"
+    },
+    {
+      "id": "L-MUM-SW",
+      "a": "CR-MUM-01",
+      "b": "SW-MUM-CORE",
+      "a_iface": "TenGig0/0/1",
+      "b_iface": "TenGig1/0/1",
+      "role": "local",
+      "impact": "medium"
+    },
+    {
+      "id": "L-DEL-SW",
+      "a": "PE-DEL-01",
+      "b": "SW-DEL-01",
+      "a_iface": "Gig0/0/3",
+      "b_iface": "Gig1/0/1",
+      "role": "local",
+      "impact": "low"
+    },
+    {
+      "id": "L-BLR-SW",
+      "a": "CE-BLR-01",
+      "b": "SW-BLR-01",
+      "a_iface": "Gig0/0/1",
+      "b_iface": "Gig1/0/1",
+      "role": "local",
+      "impact": "low"
+    }
+  ]
+}

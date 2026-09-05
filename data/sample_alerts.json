@@ -1,0 +1,186 @@
+{
+  "fibre_cut": [
+    {
+      "alert_id": "A-1001",
+      "ts": "2026-03-22T09:14:00Z",
+      "device": "CR-MUM-01",
+      "site": "DC-MUM",
+      "type": "link_down",
+      "severity": "critical",
+      "message": "Interface TenGig0/0/0 down",
+      "iface": "TenGig0/0/0",
+      "peer": "PE-DEL-01"
+    },
+    {
+      "alert_id": "A-1002",
+      "ts": "2026-03-22T09:14:02Z",
+      "device": "CR-MUM-01",
+      "site": "DC-MUM",
+      "type": "bgp_down",
+      "severity": "critical",
+      "message": "BGP neighbor PE-DEL-01 down",
+      "iface": "TenGig0/0/0",
+      "peer": "PE-DEL-01"
+    },
+    {
+      "alert_id": "A-1003",
+      "ts": "2026-03-22T09:14:05Z",
+      "device": "PE-DEL-01",
+      "site": "POP-DEL",
+      "type": "device_unreachable",
+      "severity": "critical",
+      "message": "NMS ping fail to PE-DEL-01",
+      "iface": null,
+      "peer": null
+    },
+    {
+      "alert_id": "A-1004",
+      "ts": "2026-03-22T09:14:08Z",
+      "device": "PE-DEL-01",
+      "site": "POP-DEL",
+      "type": "link_down",
+      "severity": "critical",
+      "message": "Interface TenGig0/1/0 down",
+      "iface": "TenGig0/1/0",
+      "peer": "CR-MUM-01"
+    },
+    {
+      "alert_id": "A-1005",
+      "ts": "2026-03-22T09:14:20Z",
+      "device": "CE-BLR-01",
+      "site": "BRANCH-BLR",
+      "type": "high_latency",
+      "severity": "warning",
+      "message": "Latency 180ms toward DC-MUM",
+      "iface": "Gig0/0/0",
+      "peer": "PE-DEL-01"
+    },
+    {
+      "alert_id": "A-1006",
+      "ts": "2026-03-22T09:14:21Z",
+      "device": "CE-BLR-01",
+      "site": "BRANCH-BLR",
+      "type": "high_latency",
+      "severity": "warning",
+      "message": "Latency 190ms toward DC-MUM",
+      "iface": "Gig0/0/0",
+      "peer": "PE-DEL-01"
+    },
+    {
+      "alert_id": "A-1007",
+      "ts": "2026-03-22T09:14:40Z",
+      "device": "SW-DEL-01",
+      "site": "POP-DEL",
+      "type": "high_latency",
+      "severity": "warning",
+      "message": "Latency 210ms",
+      "iface": "Gig1/0/1",
+      "peer": "PE-DEL-01"
+    }
+  ],
+  "unknown_fault": [
+    {
+      "alert_id": "A-3001",
+      "ts": "2026-03-22T11:02:15Z",
+      "device": "CR-MUM-01",
+      "site": "DC-MUM",
+      "type": "optical_power_low",
+      "severity": "major",
+      "message": "Optical power low on TenGig0/0/0",
+      "iface": "TenGig0/0/0",
+      "peer": "PE-DEL-01"
+    },
+    {
+      "alert_id": "A-3002",
+      "ts": "2026-03-22T11:02:18Z",
+      "device": "CR-MUM-01",
+      "site": "DC-MUM",
+      "type": "optical_power_low",
+      "severity": "major",
+      "message": "Optical power low on TenGig0/0/0 (repeat)",
+      "iface": "TenGig0/0/0",
+      "peer": "PE-DEL-01"
+    },
+    {
+      "alert_id": "A-3003",
+      "ts": "2026-03-22T11:02:40Z",
+      "device": "CR-MUM-01",
+      "site": "DC-MUM",
+      "type": "fabric_crc_storm",
+      "severity": "major",
+      "message": "Unknown fabric CRC storm on slot 2",
+      "iface": "Slot2",
+      "peer": null
+    }
+  ],
+  "auth_noise": [
+    {
+      "alert_id": "A-4001",
+      "ts": "2026-03-22T11:02:10Z",
+      "device": "AP-BLR-01",
+      "site": "BRANCH-BLR",
+      "type": "auth_fail",
+      "severity": "info",
+      "message": "Repeated 802.1X failures on AP-BLR-01",
+      "iface": "wlan0",
+      "peer": null
+    },
+    {
+      "alert_id": "A-4002",
+      "ts": "2026-03-22T11:02:12Z",
+      "device": "AP-BLR-01",
+      "site": "BRANCH-BLR",
+      "type": "auth_fail",
+      "severity": "info",
+      "message": "Repeated 802.1X failures on AP-BLR-01",
+      "iface": "wlan0",
+      "peer": null
+    },
+    {
+      "alert_id": "A-4003",
+      "ts": "2026-03-22T11:02:16Z",
+      "device": "AP-BLR-01",
+      "site": "BRANCH-BLR",
+      "type": "auth_fail",
+      "severity": "info",
+      "message": "Client AA:BB:CC:DD:EE:01 rejected",
+      "iface": "wlan0",
+      "peer": null
+    }
+  ],
+  "two_sites": [
+    {
+      "alert_id": "A-5001",
+      "ts": "2026-03-22T12:10:00Z",
+      "device": "SW-MUM-CORE",
+      "site": "DC-MUM",
+      "type": "high_latency",
+      "severity": "warning",
+      "message": "Latency 95ms on Mumbai core switch",
+      "iface": "TenGig1/0/1",
+      "peer": "CR-MUM-01"
+    },
+    {
+      "alert_id": "A-5002",
+      "ts": "2026-03-22T12:10:20Z",
+      "device": "SW-BLR-01",
+      "site": "BRANCH-BLR",
+      "type": "high_latency",
+      "severity": "warning",
+      "message": "Latency 110ms on Bangalore access switch",
+      "iface": "Gig1/0/1",
+      "peer": "CE-BLR-01"
+    },
+    {
+      "alert_id": "A-5003",
+      "ts": "2026-03-22T12:11:00Z",
+      "device": "FW-MUM-01",
+      "site": "DC-MUM",
+      "type": "cpu_spike",
+      "severity": "warning",
+      "message": "CPU 92% for 3 minutes",
+      "iface": null,
+      "peer": null
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Network Incident Triage Assistant</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">N</div>
+      <div>
+        <h1>Network Incident Triage Assistant</h1>
+        <p>PS07 · live grouping · runbook steps · escalate when unknown</p>
+      </div>
+    </div>
+    <div class="chips">
+      <span class="chip live-chip"><i class="live-dot"></i> <span id="clock">--:--:--</span></span>
+      <span class="chip" id="chip-backend"><i class="dot"></i> backend offline</span>
+      <span class="chip" id="chip-model">chat —</span>
+      <span class="chip" id="chip-runbooks">0 runbooks</span>
+      <button type="button" class="theme-toggle" id="theme-toggle">
+        <span id="theme-label">Dark</span> ☾
+      </button>
+    </div>
+  </header>
+
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="side-head">
+        <h2>Alert stream</h2>
+        <span class="count" id="alert-count">0 alerts</span>
+      </div>
+
+      <div class="feed" id="feed">
+        <div class="feed-empty" id="feed-empty">Paste a log or play a scenario. Alerts appear here live.</div>
+      </div>
+
+      <label class="composer-label" for="alerts">Paste log here (not JSON)</label>
+      <textarea id="alerts" spellcheck="false" placeholder="[09:14:00] CRITICAL: link down - CR-MUM-01 TenGig0/0/0"></textarea>
+
+      <div class="scenarios">
+        <button type="button" class="pill-btn" id="btn-fibre">Fibre-cut</button>
+        <button type="button" class="pill-btn" id="btn-unknown">Unknown fault</button>
+        <button type="button" class="pill-btn" id="btn-auth">Auth noise</button>
+        <button type="button" class="pill-btn" id="btn-two">Two sites</button>
+        <button type="button" class="pill-btn" id="btn-live">Live play</button>
+        <button type="button" class="pill-btn" id="btn-clear">Clear</button>
+      </div>
+      <button type="button" class="run-btn" id="btn-run">▶  Run triage</button>
+      <p class="footnote">Play a scenario to watch alerts stream in. Or paste lines and click Run. Matched runbooks show steps. Unknown problems stay with the engineer.</p>
+    </aside>
+
+    <section class="main">
+      <div class="result-head">
+        <h2>Triage result</h2>
+        <span class="count" id="elapsed">idle</span>
+      </div>
+
+      <div class="steps">
+        <article class="step" id="step-1">
+          <div class="step-num">1</div>
+          <div>
+            <h3>Group</h3>
+            <p>Cluster related alerts, mark noise</p>
+          </div>
+        </article>
+        <article class="step" id="step-2">
+          <div class="step-num">2</div>
+          <div>
+            <h3>Retrieve</h3>
+            <p>Match local runbooks</p>
+          </div>
+        </article>
+        <article class="step" id="step-3">
+          <div class="step-num">3</div>
+          <div>
+            <h3>Verify</h3>
+            <p>Cite only a real match</p>
+          </div>
+        </article>
+        <article class="step" id="step-4">
+          <div class="step-num">4</div>
+          <div>
+            <h3>Note</h3>
+            <p>Guide or leave to engineer</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="status-row" id="status-row">
+        <span class="banner idle" id="banner">Waiting for a run</span>
+      </div>
+
+      <div class="grid3">
+        <article class="box">
+          <h3>Incident</h3>
+          <p class="muted" id="incident-empty">Run triage to group related alerts.</p>
+          <ul id="incident-list"></ul>
+        </article>
+        <article class="box">
+          <h3>Noise</h3>
+          <p class="muted" id="noise-empty">Unrelated alerts stay here.</p>
+          <ul id="noise-list"></ul>
+        </article>
+        <article class="box priority-box">
+          <h3>Priority</h3>
+          <p class="priority-value" id="priority-value">—</p>
+          <p class="muted" id="priority-sub"></p>
+        </article>
+      </div>
+
+      <article class="box solve-box">
+        <h3>How to solve</h3>
+        <p class="muted" id="guide-empty">Numbered runbook steps appear here.</p>
+        <ol id="actions" class="solve-list"></ol>
+      </article>
+
+      <article class="box human-box">
+        <h3>Left for engineer</h3>
+        <p class="muted" id="human-empty">Unmatched errors are not guessed.</p>
+        <div id="human-block"></div>
+      </article>
+    </section>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

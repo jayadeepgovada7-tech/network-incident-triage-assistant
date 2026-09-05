@@ -1,0 +1,74 @@
+{
+  "devices": [
+    {
+      "hostname": "CR-MUM-01",
+      "role": "core",
+      "site": "DC-MUM",
+      "criticality": "P1",
+      "customers_served": 8000
+    },
+    {
+      "hostname": "CR-MUM-02",
+      "role": "core",
+      "site": "DC-MUM",
+      "criticality": "P1",
+      "customers_served": 8000
+    },
+    {
+      "hostname": "SW-MUM-CORE",
+      "role": "switch",
+      "site": "DC-MUM",
+      "criticality": "P2",
+      "customers_served": 8000
+    },
+    {
+      "hostname": "FW-MUM-01",
+      "role": "fw",
+      "site": "DC-MUM",
+      "criticality": "P2",
+      "customers_served": 8000
+    },
+    {
+      "hostname": "PE-DEL-01",
+      "role": "pe",
+      "site": "POP-DEL",
+      "criticality": "P1",
+      "customers_served": 2500
+    },
+    {
+      "hostname": "SW-DEL-01",
+      "role": "switch",
+      "site": "POP-DEL",
+      "criticality": "P3",
+      "customers_served": 400
+    },
+    {
+      "hostname": "AP-DEL-FL2",
+      "role": "ap",
+      "site": "POP-DEL",
+      "criticality": "P4",
+      "customers_served": 40
+    },
+    {
+      "hostname": "CE-BLR-01",
+      "role": "ce",
+      "site": "BRANCH-BLR",
+      "criticality": "P2",
+      "customers_served": 300
+    },
+    {
+      "hostname": "SW-BLR-01",
+      "role": "switch",
+      "site": "BRANCH-BLR",
+      "criticality": "P3",
+      "customers_served": 300
+    },
+    {
+      "hostname": "AP-BLR-01",
+      "role": "ap",
+      "site": "BRANCH-BLR",
+      "criticality": "P4",
+      "customers_served": 25
+    }
+  ]
+}
